@@ -41,4 +41,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * User has many blurts
+     */
+    public function blurts()
+    {
+        return $this->hasMany(Blurt::class);
+    }
 }
